@@ -1,5 +1,9 @@
 # The Port Hackathon at CERN 2016
 
+Screenshot of the product:
+
+![Alt text](/screenshots/screen1.png?raw=true "Optional Title")
+
 ## Members - GuessWhat team
 Christiane Weber (DE) 
 
