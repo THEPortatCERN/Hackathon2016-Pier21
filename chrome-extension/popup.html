@@ -4,11 +4,34 @@
     <script>
         document.getElementById("blue").innerHTML = "My First JavaScript";
     </script>
+    <style type="text/css">
+        section {
+            height: 20px;
+            margin: auto;
+            padding: 3px;
+        }
+        div#score_title {
+            width: 40px;
+            height: 20px;
+            float: left;
+        }
+        div#score {
+            margin-left: 45px;
+            width: 25px;
+            height: 20px;
+        }
+        div#feedback {
+            padding: 3px;
+        }
+    </style>
     <script src="popup.js"></script>
   </head>
   <body>
     <button id="analyze" type="button">Analyze</button>
-    <div id="score">Score: ??</div>
+    <section>
+        <div id="score_title">Score:</div>
+        <div id="score">??</div>
+    </section>
     <div id="feedback">Feedback:</div>
   </body>
 </html>
