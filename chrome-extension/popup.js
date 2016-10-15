@@ -11,6 +11,8 @@ function clickAnalyze(e) {
   var response = JSON.parse(responseTxt);
   document.getElementById("score").innerHTML = response.relevancy;
   document.getElementById("feedback-id").innerHTML = response.id;
+  document.getElementById("relevant").disabled = false;
+  document.getElementById("not-relevant").disabled = false;
 }
 
 function feedback(isRelevant) {
