@@ -13,6 +13,9 @@ function clickAnalyze(e) {
 }
 
 function feedback(isRelevant) {
+  var feedbackId = document.getElementById("feedback-id");
+  var responseTxt = httpGet("http://pier21.herokuapp.com/feedback?feedback=" +
+      (isRelevant ? '1' : '0') + "&id=" + feedbackId.innerHTML);
 }
 
 function clickRelevant(e) {
