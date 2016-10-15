@@ -30,6 +30,6 @@ Silvestro Di Luise (IT)
 
 Leonardo Milano (IT)
 
-## Team page:
+## Team page
 http://theport.ch/home/the-port-2016/
 
