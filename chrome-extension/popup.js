@@ -22,6 +22,7 @@ function feedback(isRelevant) {
   }
   var responseTxt = httpGet("http://pier21.herokuapp.com/feedback?feedback=" +
       (isRelevant ? '1' : '0') + "&id=" + feedbackId.innerHTML);
+  // TODO: highlight the clicked button.
 }
 
 function clickRelevant(e) {
@@ -33,6 +34,8 @@ function clickNotRelevant(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // TODO: when issuing a new request to the page, update the value of Yes/No
+  // if there was a previous Feedback.
   // TODO: remove the Analyze button, so the page is analyzed when the menu is opened.
   var buttonAnalyze = document.getElementById("analyze");
   buttonAnalyze.addEventListener('click', clickAnalyze);
