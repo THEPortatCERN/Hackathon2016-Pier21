@@ -11,7 +11,22 @@ function clickAnalyze(e) {
   document.getElementById("score").innerHTML = response["relevancy"]
 }
 
+function feedback(isRelevant) {
+}
+
+function clickRelevant(e) {
+  feedback(true);
+}
+
+function clickNotRelevant(e) {
+  feedback(false);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var buttonAnalyze = document.getElementById("analyze");
   buttonAnalyze.addEventListener('click', clickAnalyze);
+  var buttonRelevant = document.getElementById("relevant");
+  buttonRelevant.addEventListener('click', clickRelevant);
+  var buttonNotRelevant = document.getElementById("not-relevant");
+  buttonNotRelevant.addEventListener('click', clickNotRelevant);
 });
