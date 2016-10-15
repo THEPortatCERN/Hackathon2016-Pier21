@@ -5,14 +5,28 @@ function httpGet(theUrl) {
     return xmlHttp.responseText;
 }
 
-function clickAnalyze(e) {
-  // TODO: replace by current URL.
-  var responseTxt = httpGet("https://pier21.herokuapp.com/article?url=http://www.bbc.com/news/science-environment-37665529&disable_text=1");
-  var response = JSON.parse(responseTxt);
-  document.getElementById("score").innerHTML = response.relevancy;
-  document.getElementById("feedback-id").innerHTML = response.id;
-  document.getElementById("relevant").disabled = false;
-  document.getElementById("not-relevant").disabled = false;
+function httpGetAsync(theUrl) {
+  var request = new XMLHttpRequest();
+  request.open( "GET", theUrl, true); // true = synchronous request
+  request.onload = function (e) {
+    if (request.readyState === 4) {
+      if (request.status === 200) {
+        var response = JSON.parse(request.responseText);
+        document.getElementById("score").innerHTML = "Score: " + response.relevancy;
+        document.getElementById("feedback-id").innerHTML = response.id;
+        document.getElementById("relevant").disabled = false;
+        document.getElementById("not-relevant").disabled = false;
+
+        //document.getElementById("score").innerHTML = 'chrome.tabs.getSelected()';
+      } else {
+        console.error(request.statusText);
+      }
+    }
+  };
+  request.onerror = function (e) {
+    console.error(request.statusText);
+  };
+  request.send(null);
 }
 
 function feedback(isRelevant) {
