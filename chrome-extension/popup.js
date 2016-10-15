@@ -36,15 +36,16 @@ function feedback(isRelevant) {
   }
   var responseTxt = httpGet("http://pier21.herokuapp.com/feedback?feedback=" +
       (isRelevant ? '1' : '0') + "&id=" + feedbackId.innerHTML);
-  // TODO: highlight the clicked button.
 }
 
 function clickRelevant(e) {
   feedback(true);
+  document.getElementById("not-relevant").disabled = true;
 }
 
 function clickNotRelevant(e) {
   feedback(false);
+  document.getElementById("relevant").disabled = true;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
