@@ -1,32 +1,56 @@
 <html>
   <head>
     <title>Assess page relevancy</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="popup.js"></script>
-      
     
+          <style type="text/css">
+              body{
+                  width: 150px;
+                  text-align: center;
+              }
+        section {
+            height: 20px;
+            margin: auto;
+            padding: 3px;
+        }
+        div#score_title {
+            width: 40px;
+            height: 20px;
+            float: left;
+        }
+        div#score {
+            margin-left: 45px;
+            width: 25px;
+            height: 20px;
+        }
+        div#feedback-form {
+            padding: 3px;
+             margin: 0 auto !important;
+             display: block;
+        }
+        div#feedback {
+            white-space: nowrap;
+        }
+    </style>
   </head>
   <body>
-      <div class="container" style="width:150px;"> 
-          <div class="row">
-          <button class="btn btn-success" id="analyze" type="button">Analyze</button>
-            </div>
-    
- 
-        <div class="row">
-            <div class="col-sm-6">           
-                <label>Score: </label>     
-                <label id="score"></label>
-            </div>                   
-        </div> 
-      </div>
-      
-   
-    <div id="feedback">Feedback:</div>
+    <button class="btn btn-warning" id="analyze" type="button">Analyze</button>
+    <section>
+        <label id="score_title">Score:</label>
+        <label id="score">??</label>
+    </section>
+    <div id="feedback-form">
+        <div id="feedback">Is relevant?</div>
+        <div class="btn-group">
+             <a href="#" class="btn btn-success" id="relevant" >Yes</a>
+            <a href="#" class="btn btn-danger" id="not-relevant" >No</a>
+        </div>       
+        <div id="feedback-id" style="display: none;"/>
+    </div>
   </body>
 </html>
