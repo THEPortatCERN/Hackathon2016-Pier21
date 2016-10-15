@@ -33,6 +33,7 @@ function clickNotRelevant(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // TODO: remove the Analyze button, so the page is analyzed when the menu is opened.
   var buttonAnalyze = document.getElementById("analyze");
   buttonAnalyze.addEventListener('click', clickAnalyze);
   var buttonRelevant = document.getElementById("relevant");
