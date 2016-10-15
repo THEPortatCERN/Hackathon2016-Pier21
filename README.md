@@ -1,6 +1,6 @@
 # The Port Hackathon at CERN 2016
 
-## Members
+## Members - GuessWhat team
 Christiane Weber (DE) 
 
 Cristian Bodnar (RO) 
