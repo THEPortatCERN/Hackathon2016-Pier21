@@ -1,6 +1,4 @@
-addJSInjectedButton();
-
-function crawlForContent(node) {
+function crawlForContent(node, keywords) {
   if (!node) {
     return;
   }
@@ -26,24 +24,14 @@ function crawlForContent(node) {
           break;
 
       case 3: // Text node
-          requestClassification(node);
+          requestClassification(node, keywords);
           break;
     }
 }
 
-function requestClassification(textNode) {
+function requestClassification(textNode, keywords) {
   var v = textNode.nodeValue;
-  v = v.replace(/ola/g, "AAAA");
+  v = v.replace(/ola/g, "<a>AAAA</a>");
   textNode.nodeValue = v;
 }
 
-function addJSInjectedButton() {
-  var text = document.createTextNode("Inject JS");
-  var btn = document.createElement("BUTTON")
-  btn.onclick = function () {
-    crawlForContent(document.body);
-    alert('Done');
-  };
-  btn.appendChild(text);
-  document.body.appendChild(btn);
-}
