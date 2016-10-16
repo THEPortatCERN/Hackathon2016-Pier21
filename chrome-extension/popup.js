@@ -40,6 +40,7 @@ function feedback(isRelevant) {
   }
   var responseTxt = httpGet("http://pier21.herokuapp.com/feedback?feedback=" +
       (isRelevant ? '1' : '0') + "&id=" + feedbackId.innerHTML);
+  // TODO: maybe we should update the value of the score when the feedback button is pressed.
 }
 
 function relevantButtonSelected() {
