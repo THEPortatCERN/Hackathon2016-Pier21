@@ -1,12 +1,22 @@
 # relevancy
 relevancy api
 
+on Heroku
+
+https://pier21.herokuapp.com/
+
+sample request:
+https://pier21.herokuapp.com/article?url=http://edition.cnn.com/2016/10/15/africa/niger-us-kidnap/index.html
+
+
 To Run:
 
 
 `pip install -r requirements.txt`
 
 `export DATABASE_URL= {url to psql db}`
+
+`python create_db.py`
 
 `python views.py`
 
