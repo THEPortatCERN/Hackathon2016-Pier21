@@ -19,10 +19,9 @@
         "tabs", "<all_urls>", "storage"
     ],
     "icons": {
-      "16": "icon16.png"
+        "16": "icon16.png"
     },
     "background": {
         "scripts": ["background.js"]
     }
 }
-
