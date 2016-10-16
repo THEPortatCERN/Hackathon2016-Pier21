@@ -16,6 +16,7 @@ function httpGetAsync(theUrl) {
         document.getElementById("feedback-id").innerHTML = response.id;
         document.getElementById("relevant").disabled = false;
         document.getElementById("not-relevant").disabled = false;
+        highlightKeywords(["ola", "chau"]);
         if (response.feedback == "1") {
           relevantButtonSelected();
         } else if (response.feedback == "0") {
@@ -69,6 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var buttonNotRelevant = document.getElementById("not-relevant");
   buttonNotRelevant.addEventListener('click', clickNotRelevant);
 });
+
+function highlightKeywords(keywords) {
+  port.postMessage(keywords);
+}
 
 var port = chrome.extension.connect({
   name: "Sample Communication"
