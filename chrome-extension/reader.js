@@ -4,6 +4,7 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     var all = request.keywords;
     crawlForContent(document.body, all);
+    console.log("Done highlighting");
   });
 
 function crawlForContent(node, keywords) {
@@ -38,7 +39,6 @@ function crawlForContent(node, keywords) {
 
 function requestClassification(textNode, keywords) {
   for(var j = 0; j < keywords.length; j++) {
-    console.log(keywords[j]);
     var v = textNode.nodeValue;
     var re = new RegExp(keywords[j],"g");
     v = v.replace(re, "<a>AAAA</a>");
