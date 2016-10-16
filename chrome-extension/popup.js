@@ -16,6 +16,11 @@ function httpGetAsync(theUrl) {
         document.getElementById("feedback-id").innerHTML = response.id;
         document.getElementById("relevant").disabled = false;
         document.getElementById("not-relevant").disabled = false;
+        if (response.feedback == "1") {
+          relevantButtonSelected();
+        } else if (response.feedback == "0") {
+          notRelevantButtonSelected();
+        }
         // TODO: the response will include a list of keyboards, we should highlight those in the current page.
       } else {
         console.error(request.statusText);
@@ -37,14 +42,24 @@ function feedback(isRelevant) {
       (isRelevant ? '1' : '0') + "&id=" + feedbackId.innerHTML);
 }
 
+function relevantButtonSelected() {
+  document.getElementById("relevant").style.backgroundColor = "#449d44";
+  document.getElementById("not-relevant").style.backgroundColor = "#D18D77";
+}
+
+function notRelevantButtonSelected() {
+  document.getElementById("relevant").style.backgroundColor = "#97C997";
+  document.getElementById("not-relevant").style.backgroundColor = "#c9302c";
+}
+
 function clickRelevant(e) {
   feedback(true);
-  document.getElementById("not-relevant").disabled = true;
+  relevantButtonSelected();
 }
 
 function clickNotRelevant(e) {
   feedback(false);
-  document.getElementById("relevant").disabled = true;
+  notRelevantButtonSelected();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -60,9 +75,5 @@ var port = chrome.extension.connect({
 port.postMessage("request-current-URL");
 port.onMessage.addListener(function(msg) {
     chrome.extension.getBackgroundPage().console.log("Sending request to server for: " + msg);
-
-    // TODO: when issuing a new request to the page, update the value of Yes/No
-    // if there was a previous Feedback.
     httpGetAsync("https://pier21.herokuapp.com/article?disable_text=1&url=" + msg);
-
 });
