@@ -17,8 +17,6 @@ function httpGetAsync(theUrl) {
         document.getElementById("relevant").disabled = false;
         document.getElementById("not-relevant").disabled = false;
         // TODO: the response will include a list of keyboards, we should highlight those in the current page.
-
-        //document.getElementById("score").innerHTML = 'chrome.tabs.getSelected()';
       } else {
         console.error(request.statusText);
       }
