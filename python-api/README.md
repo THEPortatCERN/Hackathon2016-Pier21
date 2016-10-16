@@ -34,6 +34,6 @@ To Run:
 
 call:
 
-`curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:5000/article`
+`curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:5000/article?url=http://www.google.com`
 
 
