@@ -35,7 +35,7 @@ function requestClassification(textNode, keywords) {
         for(var j = 0; j < keyword.length; j++)
         {
             var v = textNode.nodeValue;
-            v = v.replace("/"+v+"/g", "<span style='bakcground-color:yellow'>"+v+"</span>");
+            v = v.replace("/"+v+"/g", "<span style='background-color:yellow'>"+v+"</span>");
             textNode.nodeValue = v;
         }
       
