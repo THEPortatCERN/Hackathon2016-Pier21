@@ -51,11 +51,21 @@ function clickNotRelevant(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // TODO: when issuing a new request to the page, update the value of Yes/No
-  // if there was a previous Feedback.
   var buttonRelevant = document.getElementById("relevant");
   buttonRelevant.addEventListener('click', clickRelevant);
   var buttonNotRelevant = document.getElementById("not-relevant");
   buttonNotRelevant.addEventListener('click', clickNotRelevant);
-  httpGetAsync("https://pier21.herokuapp.com/article?url=http://www.bbc.com/news/science-environment-37665529&disable_text=1");
+});
+
+var port = chrome.extension.connect({
+  name: "Sample Communication"
+});
+port.postMessage("request-current-URL");
+port.onMessage.addListener(function(msg) {
+    chrome.extension.getBackgroundPage().console.log("Sending request to server for: " + msg);
+
+    // TODO: when issuing a new request to the page, update the value of Yes/No
+    // if there was a previous Feedback.
+    httpGetAsync("https://pier21.herokuapp.com/article?disable_text=1&url=" + msg);
+
 });
