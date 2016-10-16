@@ -35,7 +35,6 @@ function feedback(isRelevant) {
   if (!feedbackId) {
     return;
   }
-  // TODO: remove hardcode from URL!
   var responseTxt = httpGet("http://pier21.herokuapp.com/feedback?feedback=" +
       (isRelevant ? '1' : '0') + "&id=" + feedbackId.innerHTML);
 }
