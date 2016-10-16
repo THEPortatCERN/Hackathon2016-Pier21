@@ -30,8 +30,14 @@ function crawlForContent(node, keywords) {
 }
 
 function requestClassification(textNode, keywords) {
-  var v = textNode.nodeValue;
-  v = v.replace(/ola/g, "<a>AAAA</a>");
-  textNode.nodeValue = v;
+  
+        var keyword = keywords.keywords;
+        for(var j = 0; j < keyword.length; j++)
+        {
+            var v = textNode.nodeValue;
+            v = v.replace("/"+v+"/g", "<span style='bakcground-color:yellow'>"+v+"</span>");
+            textNode.nodeValue = v;
+        }
+      
 }
 
