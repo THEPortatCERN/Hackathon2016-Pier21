@@ -8,7 +8,7 @@ goose-extractor==1.0.25
 itsdangerous==0.24
 jieba==0.38
 Jinja2==2.11.3
-lxml==4.6.3
+lxml==4.6.5
 MarkupSafe==0.23
 nltk==3.4.5
 Pillow==8.1.1
